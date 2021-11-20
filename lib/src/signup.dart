@@ -1,7 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_login_signup/src/Widget/bezierContainer.dart';
-import 'package:flutter_login_signup/src/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kyk_flutter_app/dropdown_button.dart';
+import 'package:kyk_flutter_app/src/loginPage.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key ?key, this.title}) : super(key: key);
@@ -13,6 +14,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
+
   Widget _backButton() {
     return InkWell(
       onTap: () {
@@ -73,12 +76,32 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  Widget _dropdown_button(String title, {bool isPassword = false}){
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
 
+      child :  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          /*Text(
+              title,
+              style: GoogleFonts.roboto()
+          ),*/
+          SizedBox(
+            height: 0,
+          ),
+
+
+          DropDown(),
+        ],
+      ),
+    );
+  }
   Widget _entryField(String title, {bool isPassword = false}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
 
-      child: Column(
+       child :  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
@@ -95,12 +118,18 @@ class _SignUpPageState extends State<SignUpPage> {
                   borderRadius: BorderRadius.all(Radius.circular(25)),
                   borderSide: BorderSide.none,
                 ),
+
+
                 fillColor: Color(0xfff3f3f4),
                 filled: true),
             style: GoogleFonts.roboto(
               textStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
             ),
-          )
+
+          ),
+
+
+          //DropDown(),
         ],
       ),
     );
@@ -174,10 +203,11 @@ class _SignUpPageState extends State<SignUpPage> {
         _entryField("İsim"),
         _entryField("Soyisim"),
         _entryField("Telefon"),
-        _entryField("Şehir"),
+        _dropdown_button("Şehir"),
+        /*_entryField("Şehir"),
         _entryField("KYK Adı"),
         _entryField("Blok"),
-        _entryField("Oda"),
+        _entryField("Oda"),*/
         _entryField("Email"),
         _entryField("Şifre", isPassword: true),
         _entryField("Şifreyi Onayla", isPassword: true),

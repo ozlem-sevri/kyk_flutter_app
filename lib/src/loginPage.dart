@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< Updated upstream
+=======
+//import 'package:kyk_flutter_app/src/laundryPage.dart';
+import 'package:kyk_flutter_app/src/signup.dart';
+>>>>>>> Stashed changes
 
 
 import 'Widget/bezierContainer.dart';
@@ -19,6 +24,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget _backButton() {
     return InkWell(
       onTap: () {
+<<<<<<< Updated upstream
+=======
+      //  Navigator.push(
+           // context, MaterialPageRoute(builder: (context) => LaundryPage()));
+>>>>>>> Stashed changes
         Navigator.pop(context);
       },
       child: Container(
